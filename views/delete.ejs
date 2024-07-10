@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete User</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .user-info {
+            margin-bottom: 20px;
+        }
+        form {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .btn {
+            background-color: #f44336;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .btn:hover {
+            background-color: #d32f2f;
+        }
+        .btn-cancel {
+            background-color: #607d8b;
+        }
+        .btn-cancel:hover {
+            background-color: #455a64;
+        }
+    </style>
+</head>
+<body>
+    <h1>Delete User</h1>
+    <div class="user-info">
+        <p>Are you sure you want to delete this user?</p>
+        <p><strong>User ID:</strong> <%= user.id %></p>
+        <p><strong>Name:</strong> <%= user.username %></p>
+        <p><strong>Email:</strong> <%= user.email %></p>
+    </div>
+    <form action="/delete/<%= user.id %>" method="POST">
+        <button class="btn" type="submit">Confirm Delete</button>
+    </form>
+    <a class="btn btn-cancel" href="/">Cancel</a>
+</body>
+</html>
